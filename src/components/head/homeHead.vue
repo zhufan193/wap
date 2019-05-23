@@ -34,12 +34,10 @@
                       <mt-cell>
                         <ul>
                             <li>
-                              <span>A</span>
                               <p>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
+                                <router-link v-for="(hots,index) in hotlist" :key="index" :to="{path:'/cityid/'+hots.cityid+'.html'}">
+                                  {{hots.name}}
+                                </router-link>
                               </p>
                             </li>
                         </ul>
@@ -51,10 +49,7 @@
                             <li>
                               <span>E</span>
                               <p>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
+                                <router-link v-for="ins in 4" :key="ins" :to="{path:'/cityid/'+12+'.html'}">安庆</router-link>
                               </p>
                             </li>
                         </ul>
@@ -66,10 +61,7 @@
                             <li>
                               <span>G</span>
                               <p>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
+                                <router-link v-for="ins in 4" :key="ins" :to="{path:'/cityid/'+12+'.html'}">安庆</router-link>
                               </p>
                             </li>
                         </ul>
@@ -81,10 +73,7 @@
                             <li>
                               <span>X</span>
                               <p>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
+                                <router-link v-for="ins in 4" :key="ins" :to="{path:'/cityid/'+12+'.html'}">安庆</router-link>
                               </p>
                             </li>
                         </ul>
@@ -96,10 +85,7 @@
                             <li>
                               <span>Z</span>
                               <p>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
+                                <router-link v-for="ins in 4" :key="ins" :to="{path:'/cityid/'+12+'.html'}">安庆</router-link>
                               </p>
                             </li>
                         </ul>
@@ -111,10 +97,7 @@
                             <li>
                               <span>A</span>
                               <p>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
-                                <router-link to="">安庆</router-link>
+                                <router-link v-for="ins in 4" :key="ins" :to="{path:'/cityid/'+12+'.html'}">安庆</router-link>
                               </p>
                             </li>
                         </ul>
@@ -129,7 +112,7 @@
             <div class="head-right-first">
                 <div>
                     <i class="iconfont icon-iconfontzhizuobiaozhun22" @click="search"></i>
-                    <input v-model="searchname" class="div-input" type="text" placeholder="请输入课程名称"/>
+                    <input v-model="searchname" class="div-input" type="text" placeholder="请输入课程名称" @blur="search"/>
                 </div>
             </div>
         </div>
@@ -149,11 +132,23 @@
           cityname: '总站',
           selected: '1',
           ishow: false,  // 是否显示更换城市
+          hotlist:[
+            {name:'北京',cityid:'12'},
+            {name:'深圳',cityid:'132'},
+            {name:'上海',cityid:'152'},
+            {name:'广州',cityid:'126'},
+          ]
         }
       },
       methods:{
         search() {
-          console.log("搜索")
+          if(!this.searchname){
+            this.$toast.fail('请输入搜索的课程名');
+          }else{
+            this.$router.push('/search'+this.searchname);
+
+          }
+          
         }
       }
   }

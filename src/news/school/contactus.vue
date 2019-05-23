@@ -3,47 +3,15 @@
     <div class="area box" v-title v-bind:data-title="title">
         <!-- 培训课程 -->
         <div class="px-course">
-            <h2>上海致学教育</h2>
-            <p deep="2">
-                <span>学校介绍：</span>
-                上海致学教育成立于2004年，专业从事中学生学习能力养成与学科辅导。由华东师范大学教授、博士与市级教研员共同创建。致学秉承让学习变得简单高效愉悦的理念，融合中西方教育教学理论，
-                依托专业教学团队，立足1对6小组分层培优教学模式，营造专业、高效的学习情境，助推学生达成学业梦想！历经十多年教学研究与实践，上海致学教育现已成长为中国中小学小组分层培优品牌，
-                专业提供中学学科辅导、学习效能特训、心理咨询、家庭教育指导、互联网教育、软件开发等项目的综合性服务。
-                <br data-filtered="filtered">
-                1对6小组分层培优模式，是在原教育部课题研究成果的基础上，历经10余年探索而逐步形成的。实践表明，这种教学模式因其兼备个性化、科学性、建构性、愉悦性等多种优势，受到学员、家长、
-                老师和社会的一致好评。已经为近10万名学员提高了学业成绩，达成升学梦想。
-                <br data-filtered="filtered">
-                与其他社会培训机构相比，致学1对6小组分层培优模式的专业化水平堪称国内翘楚。核心专家团队既具有扎实的分层教学理论研究功底，也有厚实的分层教学实践经验积累。
-                借助理论探索和实践推进的双轮驱动，致学将不断提升专业化办学水平，用高质量的个性化教育服务，积极承担教育强国的社会责任。<br data-filtered="filtered">
-            </p>
+            
         </div>
         <!-- 培训类型 -->
         <div class="leix">
+            <h2>上海致学教育</h2>
             <p>
                 <span>培训类型：</span>
                 <router-link :to="{path: '/category/catid-'+tem.catid+'-cityid-'+tem.cid+'.html'}" v-for="(tem,ind) in schoolList " :key="ind">{{tem.name}},</router-link>
             </p>
-        </div>
-        <!-- 培训课程 -->
-        <div class="train-course">
-            <p>
-                <span>培训课程：</span>上海致学教育提供
-                <router-link :to="{path:'/course/id-'+cour.cid+'-cityid-'+cour.cityid+'.html'}" v-for="(cour,cind) in courseList" :key="cind">{{cour.name}},</router-link>
-            </p>
-            <ul>
-                <li>
-                    <span>学校地址：</span>
-                    上海普陀区中山北路3553号伸大厦
-                </li>
-                <li>
-                    <span>
-                        咨询电话：
-                        <span>400-000-9192</span> 
-                        咨询QQ 
-                        <span>1372575379</span>
-                    </span>
-                </li>
-            </ul>
         </div>
         <!-- 推荐课程 -->
         <div class="arealist">
@@ -131,10 +99,10 @@ export default {
 <style lang="stylus" scoped>
 .area{
     width 100%;
-    .px-course{
-        padding: 0px 5px;
+
+    .leix{
+        padding: 0px 0.3rem;
         border-bottom: 5px solid #f0eff5;
-        padding-bottom: 5px;
         h2{
             color: #454545;
             font-size: 0.4rem;
@@ -149,54 +117,10 @@ export default {
                 font-weight: bold;
                 color: #24a4fb;
             }
-        }
-    }
-    .leix{
-        padding: 0px 0.3rem;
-        border-bottom: 5px solid #f0eff5;
-        p{
-            color: #454545;
-            font-size: 0.35rem;
-            line-height: 0.6rem;
-            margin-top: 0.4rem;
-            span{
-                font-weight: bold;
-                color: #24a4fb;
-            }
             a{
                 margin-right: 5px; 
                 font-size: 16px; 
                 color: #898989;
-            }
-        }
-    }
-    .train-course{
-        padding: 0px 0.3rem;
-        border-bottom: 5px solid #f0eff5;
-        P{
-            color: #454545;
-            font-size: 0.35rem;
-            line-height: 0.6rem;
-            margin-top: 0.4rem;
-            span{
-                font-weight: bold;
-                color: #24a4fb;
-            }
-            a{
-                margin-right: 5px; font-size: 16px; color: #898989;
-            }
-        }
-        ul{
-            padding: 0.3rem 0px;
-            li{
-                color: #454545;
-                font-size: 0.35rem;
-                text-align: center;
-                padding-bottom: 0.3rem;
-                span{
-                    font-weight: bold;
-                    color: #24a4fb;
-                }
             }
         }
     }

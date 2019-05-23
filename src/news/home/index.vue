@@ -55,17 +55,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -97,17 +97,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectPc}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -139,17 +139,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectExam}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -181,17 +181,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -223,17 +223,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -265,17 +265,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -307,17 +307,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -349,17 +349,17 @@
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link to="">
+                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link to="">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link to="">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -393,7 +393,7 @@
             <mt-cell>
               <ul>
                   <li v-for="a in 5">
-                      <router-link to="">
+                      <router-link :to="{path:'school/'+1107+'/document-id-'+46995+'.html'}">
                         广州酒吧领舞培训班
                         <label>05-15</label>
                       </router-link>
@@ -405,7 +405,7 @@
             <mt-cell>
               <ul>
                   <li v-for="a in 5">
-                      <router-link to="">
+                      <router-link :to="{path:'school/'+1107+'/document-id-'+465+'.html'}">
                         广州酒吧领舞培训班
                         <label>05-11</label>
                       </router-link>
@@ -417,7 +417,7 @@
             <mt-cell>
               <ul>
                   <li v-for="a in 5">
-                      <router-link to="">
+                      <router-link :to="{path:'/news/id-'+12886+'-cityid-'+0+'.html'}">
                         广州酒吧领舞培训班
                         <label>05-10</label>
                       </router-link>
@@ -465,8 +465,6 @@
           {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
           {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
           {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
-          
-          
         ],
         // 外语
         engList:[
@@ -502,9 +500,14 @@
         
       }
     },
-    mounted(){
+    watch: {
+        // 如果路由有变化，会再次执行该方法
+        "$route": "getDate"
     },
     methods:{
+      getDate(){
+        this.$router.go(0)
+      },
       // 外语
       getEng(num){
         this.sflage = num;

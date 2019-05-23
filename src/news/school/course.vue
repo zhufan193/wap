@@ -16,12 +16,21 @@
                 </ul>
                 <div class="clear"></div> 
             </div>
-
-            <!-- 分页 -->
-            <div>
-                分页未写
-            </div>
         </div>
+        <!-- 分页 -->
+            <div class="pagination">
+                <span>
+                    共{{page}}页
+                </span>
+                <span @click="toleft" v-if="flage != 1" class="button-span"><</span>
+                <span class="span-num">{{flage}}</span>
+                <span @click="toright" v-if="flage != page" class="button-span">></span>
+                <span>
+                    跳至
+                    <input type="number"  class="gotopage" v-model="topage" @blur="gotopage">
+                    页
+                </span>
+            </div>
     </div>
 </template>
 <script>
@@ -29,8 +38,47 @@ export default {
     data() {
         return{
             title: '课程信息',
+            all: 100000, //数据总条数
+            pagesize: 15,  //每页多少条
+            page: 0, // 总共多少页
+            flage: 1, //当前页
+            topage: null,
         }
-    }
+    },
+    created() {
+        this.page = Math.ceil(this.all / this.pagesize);
+    },
+    watch: {
+        // 如果路由有变化，会再次执行该方法
+        "$route": "getDate"
+    },
+    methods:{
+        // 上一页
+        toleft() {
+            this.flage = Number(this.flage);
+            this.flage -= 1;
+            // this.$router.push('/category/catid-'+12+'-cityid-'+123+'-page-'+this.flage+'.html');
+        },
+        // 下一页
+        toright() {
+            this.flage = Number(this.flage);
+            this.flage += 1;
+            // this.$router.push('/category/catid-'+12+'-cityid-'+123+'-page-'+this.flage+'.html');
+        },
+        gotopage() {
+            if(this.topage > this.page){
+                this.topage = null; 
+                return this.$toast.fail('已超过最大页数');
+            }else{
+                this.flage = this.topage;
+                this.topage = null;
+                // this.$router.push('/category/catid-'+12+'-cityid-'+123+'-page-'+this.flage+'.html');
+            }
+        },
+        // 调用接口获取列表数据
+        getDate() {
+        }
+    },
 }
 </script>
 <style lang="stylus" scoped>
@@ -38,7 +86,6 @@ export default {
     width 100%;
     .courselist{
         padding: 0px 0.3rem 0.3rem;
-        border-bottom: 5px solid #f0eff5;
         h2{
             color: #31a9fc;
             position: relative;

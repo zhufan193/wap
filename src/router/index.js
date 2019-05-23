@@ -7,13 +7,21 @@ export default new Router({
     {
       path: '/',
       name:'/',
+      alias: '/cityid/:cityid.html',
       component: () => import ('@/news/home/index'),
     },
     //首页种类选择
     {
       path: '/category/catid-:catid-cityid-:cid.html',
       name: 'category',
+      alias: '/category/catid-:catid-cityid-:cid-page-pid.html',
       component: () => import ('@/news/categorys/index'),
+    },
+    // 搜索结果页
+    {
+      path: '/search:name',
+      name: 'search',
+      component: () => import ('@/news/search/index'),
     },
     // 机构
     {
@@ -94,6 +102,12 @@ export default new Router({
           path:'/school/:sid/demand.html',
           name:'demand',
           component: () => import ('@/news/school/demand')
+        },
+        // 相关新闻
+        {
+          path:'/news/id-:nid-cityid-:cid.html',
+          name:'news',
+          component: () => import ('@/news/school/news')
         },
       ]
     },
