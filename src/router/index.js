@@ -117,5 +117,31 @@ export default new Router({
       name: 'document',
       component: () => import ('@/news/school/document'),
     },
+    //关于我们
+    {
+      path: '/meabouts.html',
+      name: 'meabout',
+      component: () => import ('@/news/aboutus/index'),
+      redirect: '/meabout.html',
+      children: [
+        {
+          path: '/meabout.html',
+          name: 'meabout/index',
+          component: () => import ('@/news/aboutus/meabout'),
+        },
+        {
+          // 招生服务
+          path: '/addstudents.html',
+          name: 'addstudents',
+          component: () => import ('@/news/aboutus/addstudents'),
+        },
+        {
+          // 分站联盟
+          path: '/morecity.html',
+          name: 'morecity',
+          component: () => import ('@/news/aboutus/morecity'),
+        },
+      ]
+    },
   ]
 })

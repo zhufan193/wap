@@ -4,13 +4,13 @@
         <div class="aboutus">
         <ul>
             <li>
-                <router-link to="">关于我们</router-link>
+                <router-link :to="{name:'meabout'}">关于我们</router-link>
             </li>
             <li>
-                <router-link to="">我们的服务</router-link>
+                <router-link :to="{name:'addstudents'}">招生服务</router-link>
             </li>
             <li>
-                <router-link to="">用户帮助</router-link>
+                <router-link :to="{name:'morecity'}">分站联盟</router-link>
             </li>
         </ul>
         <div class="clear"></div>
