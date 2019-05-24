@@ -17,7 +17,7 @@
         </div>
         <div class="ifoot">
             <p>copyright 2009-2019 http://www.91qiux.com All Rights Reserved</p>
-            <p>91求学教育网 版权所有 <a href="http://www.miitbeian.gov.cn" target="_blank">赣ICP备18008108号-1</a></p>
+            <p>91求学教育网 版权所有 <a href="http://www.beian.gov.cn" target="_blank">赣ICP备18008108号-1</a></p>
         </div> 
     </div>
 </template>

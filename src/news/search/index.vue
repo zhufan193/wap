@@ -31,8 +31,8 @@
                     </li>
                 </ul>
             </div>
-
-            <!-- 分页 -->
+        </div>
+        <!-- 分页 -->
         <div class="pagination">
             <span>
                 共{{page}}页
@@ -46,8 +46,6 @@
                 页
             </span>
         </div>
-        </div>
-        
         <homefoot/>
     </div>
 </template>
@@ -118,7 +116,7 @@ export default {
         top: 60px;
         padding-bottom 10px;
         border-bottom: 1px solid #e0e0e0;
-        margin-bottom: 100px;
+        margin-bottom: 60px;
         .div-where{
             width: 100%;
             height: 36px;

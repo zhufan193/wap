@@ -29,7 +29,7 @@ export default {
         return{
             title: '校区分布详情',
             otherList: [
-                { name:'闵行七宝校区',sid:'12',infoid:'123' },
+                { name:'闵行七宝校区闵行七宝校区',sid:'12',infoid:'123' },
                 { name:'闵行七宝校区',sid:'12',infoid:'1234' },
                 { name:'闵行七宝校区',sid:'12',infoid:'1235' },
                 { name:'闵行七宝校区',sid:'12',infoid:'1236' },
@@ -81,6 +81,12 @@ export default {
                 margin-bottom: 0.5rem;
                 letter-spacing: 0.08rem;
                 border: 1px solid #616161;
+                a{
+                    display:block;
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                    overflow:hidden;
+                }
             }
         }
     }

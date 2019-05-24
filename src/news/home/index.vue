@@ -4,7 +4,7 @@
     <div class="banner">
         <mt-swipe :auto="4000">
           <mt-swipe-item v-for="(tem,tindex) in imgList" :key="tindex">
-              <router-link to="">
+              <router-link :to="{path:'/school/'+tem.sid}">
                 <img v-lazy="tem.src"/>
               </router-link> 
           </mt-swipe-item>
@@ -13,11 +13,12 @@
     <!-- 培训机构 -->
     <div class="shcoolList">
         <ul>
-            <li v-for="lis in 8">
-                <router-link :to="{path:'/category/catid-1-cityid-'+'123'+'.html'}" title="语言培训" alt="语言培训">
-                  语言培训
+            <li v-for="(ptem,pindex) in pxList" :key="pindex">
+                <router-link :to="{path:'/category/catid-'+ptem.catid+'-cityid-'+ptem.cityid+'.html'}" title="语言培训" alt="语言培训">
+                  {{ptem.name}}
                 </router-link>
             </li>
+            <div class="clear"></div>
         </ul>
     </div>
     <!-- 名校馆 -->
@@ -25,7 +26,7 @@
         <span>名校馆</span>
         <ul>
             <li v-for="(tem,tindex) in temList" :key="tindex">
-                <router-link :to="{path:'/sch/'+'123'}" target="_blank">
+                <router-link :to="{path:'/sch/'+tem.sid}">
                     <img v-lazy="tem.src"/>
                 </router-link>
             </li>
@@ -40,32 +41,31 @@
         <span @click="show0 = !show0">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectEnglish" >
+        <div class="english-list">
             <ul :class="{'showul':show0}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == sflage}" @click="getEng(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectEnglish}" @click="selectEnglish = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
                 </li>
-                
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectEnglish">
+        <div>
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -83,9 +83,9 @@
         <span @click="show1 = !show1">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectPc" >
+        <div class="english-list">
             <ul :class="{'showul':show1}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == pcflage}" @click="getpc(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectPc}" @click="selectPc =  etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -93,21 +93,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectPc">
+        <div>
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectPc}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -125,9 +125,9 @@
         <span @click="show2 = !show2">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectExam">
+        <div class="english-list">
             <ul :class="{'showul':show2}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == examflage}" @click="getExam(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectExam}" @click="selectExam = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -135,21 +135,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectExam">
+        <div>
             <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectExam}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -167,9 +167,9 @@
         <span @click="show3 = !show3">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectEnglish" >
+        <div class="english-list">
             <ul :class="{'showul':show3}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == sflage}" @click="getEng(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectschool}" @click="selectschool = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -177,21 +177,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectEnglish">
-            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
+        <div>
+            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectschool}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -209,9 +209,9 @@
         <span @click="show4 = !show4">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectEnglish" >
+        <div class="english-list">
             <ul :class="{'showul':show4}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == sflage}" @click="getEng(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectart}" @click="selectart = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -219,21 +219,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectEnglish">
-            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
+        <div>
+            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectart}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -251,9 +251,9 @@
         <span @click="show5 = !show5">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectEnglish" >
+        <div class="english-list">
             <ul :class="{'showul':show5}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == sflage}" @click="getEng(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectjiaoyu}" @click="selectjiaoyu = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -261,21 +261,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectEnglish">
-            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
+        <div>
+            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectjiaoyu}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -293,9 +293,9 @@
         <span @click="show6 = !show6">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectEnglish" >
+        <div class="english-list">
             <ul :class="{'showul':show6}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == sflage}" @click="getEng(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectother}" @click="selectother = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -303,21 +303,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectEnglish">
-            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
+        <div>
+            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectother}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -335,9 +335,9 @@
         <span @click="show7 = !show7">
           <i></i>
         </span>
-        <div class="english-list" v-model="selectEnglish" >
+        <div class="english-list" >
             <ul :class="{'showul':show7}">
-                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:eindex == sflage}" @click="getEng(eindex)">
+                <li v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{newcla:etem.id == selectfex}" @click="selectfex = etem.id">
                   <router-link to="">
                       {{etem.name}}
                   </router-link>
@@ -345,21 +345,21 @@
                 <div class="clear"></div>
             </ul>
         </div>
-        <div v-model="selectEnglish">
-            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectEnglish}">
+        <div>
+            <div class="div-content" v-for="( etem,eindex) in engList" :key="eindex"  :id="etem.id" :class="{showcla:etem.id == selectfex}">
             <ul v-for="(course,cindex) in etem.sch" :key="cindex">
                 <li>
-                    <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">
+                    <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">
                         <img :src="course.img" />
                     </router-link>
                 </li>
                 <li class="second-li">
                     <p class="first-p">
-                        <router-link :to="{path:'/course/id-'+11+'-cityid-'+210+'.html'}">{{course.course}}</router-link>
+                        <router-link :to="{path:'/course/id-'+course.courseid+'-cityid-'+course.cityid+'.html'}">{{course.course}}</router-link>
                     </p>
                     <p class="second-p">
                         <span>培训学校</span>
-                        <router-link :to="{path:'/school/'+1051+'/'}">{{course.school}}</router-link>
+                        <router-link :to="{path:'/school/'+course.sid+'/'}">{{course.school}}</router-link>
                     </p>
                 </li>
                 <div class="clear"></div>
@@ -440,11 +440,13 @@
       return {
         title: '91求学网',
         selectEnglish: '1',  // 外语培训id
-        sflage: '0',  // 选择的外语培训
-        selectPc: '1',  // 培训id
-        pcflage: '0',  // 选择的电脑培训
+        selectPc: '1',  // 培训外语培训id
         selectExam: '1',  // 培训id
-        examflage: '0',  // 选择的资格考试培训
+        selectschool: '1', // 中小学
+        selectart: '1', // 文体艺术
+        selectjiaoyu: '1', // 学历教育
+        selectother: '1', // 出国留学
+        selectfex: '1', // 职业技能
         show0:false,
         show1:false,
         show2:false,
@@ -453,49 +455,67 @@
         show5:false,
         show6:false,
         show7:false,
-
         selected: '1',
+        // banner列表
         imgList:[
           {src: 'http://www.91qiux.com/attachment/focus/1541728975fqgrt.jpg',name:'上海优路教育',sid:'23'},
           {src: 'http://www.91qiux.com/attachment/focus/15341295619qwkj.jpg',name:'上海优路教育',sid:'243'},
           {src: 'http://www.91qiux.com/attachment/focus/1541728844xd1rw.jpg',name:'上海优路教育',sid:'253'},
         ],
+        // 培训列表
+        pxList:[
+          {name:'语言培训',catid:'23',cityid:'123'},
+          {name:'语言培训',catid:'233',cityid:'123'},
+          {name:'语言培训',catid:'234',cityid:'123'},
+          {name:'语言培训',catid:'235',cityid:'123'},
+        ],
         temList:[
-          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
-          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
-          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
-          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg'},
+          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg',sid:'123'},
+          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg',sid:'1234'},
+          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg',sid:'1235'},
+          {src:'http://www.91qiux.com/attachment/face/201807/1532142592ry9lo.jpg',sid:'1236'},
         ],
         // 外语
         engList:[
           {   name:'少儿英语',id:'1',
               sch:[
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1551253249josv5.jpg', course:'常州青少年英语培训班',school:'常州美联英语'},
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550560810ne7k7.jpg', course:'上海青少年英语培训班',school:'上海美联英语'},
+                {
+                  img:'http://www.91qiux.com/attachment/information/201902/pre_1551253249josv5.jpg', 
+                  course:'常州青少年英语培训班',
+                  school:'常州美联英语',
+                  courseid: '12',
+                  cityid: '123',
+                  sid: '125'
+                },
+                {
+                  img:'http://www.91qiux.com/attachment/information/201902/pre_1550560810ne7k7.jpg', 
+                  course:'上海青少年英语培训班',
+                  school:'上海美联英语',
+                  courseid: '12',
+                  cityid: '123',
+                  sid: '125'
+                },
               ]
           },
           {   name:'少儿英语',id:'2',
               sch:[
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1551253249josv5.jpg', course:'常州青少年英语培训班',school:'常州美联英语'},
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1551253249josv5.jpg', course:'上海青少年英语培训班',school:'上海美联英语'},
+                {
+                  img:'http://www.91qiux.com/attachment/information/201902/pre_1551253249josv5.jpg', 
+                  course:'常州青少年英语培训班',
+                  school:'常州美联英语',
+                  courseid: '12',
+                  cityid: '123',
+                  sid: '125'
+                },
+                {
+                  img:'http://www.91qiux.com/attachment/information/201902/pre_1551253249josv5.jpg',
+                  course:'上海青少年英语培训班',
+                  school:'上海美联英语',
+                  courseid: '12',
+                  cityid: '123',
+                  sid: '125'
+                },
               ]},
-          {   name:'少儿英语',id:'3',
-              sch:[
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550560810ne7k7.jpg', course:'常州青少年英语培训班',school:'常州美联英语'},
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550560810ne7k7.jpg', course:'上海青少年英语培训班',school:'上海美联英语'},
-              ]},
-          {   name:'少儿英语',id:'4',
-              sch:[
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550979796zebsa.jpg', course:'常州青少年英语培训班',school:'常州美联英语'},
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550979796zebsa.jpg', course:'上海青少年英语培训班',school:'上海美联英语'},
-              ]
-          },
-          {   name:'少儿英语',id:'5',
-              sch:[
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550979796zebsa.jpg', course:'常州青少年英语培训班',school:'常州美联英语'},
-                {img:'http://www.91qiux.com/attachment/information/201902/pre_1550979796zebsa.jpg', course:'上海青少年英语培训班',school:'上海美联英语'},
-              ]
-          },
         ],
         
       }
@@ -508,21 +528,7 @@
       getDate(){
         this.$router.go(0)
       },
-      // 外语
-      getEng(num){
-        this.sflage = num;
-        this.selectEnglish = num + 1;
-      },
-      // 电脑
-      getpc(num){
-        this.pcflage = num;
-        this.selectPc = num + 1;
-      },
-      // 资格考试
-      getExam(num){
-        this.examflage = num;
-        this.selectExam = num + 1;
-      },
+
     },
     components:{
       HeaderTop,
@@ -549,7 +555,6 @@
       margin-top 10px
       padding-top: 5px;
       padding-bottom: 0px;
-      height: 200px;
       ul{
         li{
             float: left;
