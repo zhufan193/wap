@@ -15,7 +15,7 @@ import homehead from '@/components/head/homeHead'
 export default {
     data() {
         return{
-            title: '问题列表页',
+            title: '问答列表页',
             flage: 1
         }
     },
