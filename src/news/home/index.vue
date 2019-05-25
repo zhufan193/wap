@@ -371,10 +371,11 @@
     <!-- 最新课程 -->
     <div class="city-tab">
         <mt-navbar v-model="selected">
-          <mt-tab-item id="1">最新课程</mt-tab-item>
-          <mt-tab-item id="2">学校动态</mt-tab-item>
-          <mt-tab-item id="3">学习资讯</mt-tab-item>
-          <mt-tab-item id="4">网站新闻</mt-tab-item>
+          <mt-tab-item id="1">课程</mt-tab-item>
+          <mt-tab-item id="2">动态</mt-tab-item>
+          <mt-tab-item id="3">资讯</mt-tab-item>
+          <mt-tab-item id="4">新闻</mt-tab-item>
+          <mt-tab-item id="5">问答</mt-tab-item>
         </mt-navbar>
         <mt-tab-container v-model="selected">
           <mt-tab-container-item id="1">
@@ -420,6 +421,18 @@
                       <router-link :to="{path:'/news/id-'+12886+'-cityid-'+0+'.html'}">
                         广州酒吧领舞培训班
                         <label>05-10</label>
+                      </router-link>
+                  </li>
+              </ul>
+            </mt-cell>
+          </mt-tab-container-item>
+          <mt-tab-container-item id="5">
+            <mt-cell>
+              <ul>
+                  <li v-for="a in 5">
+                      <router-link :to="{path:'/queanws/'+12+'.html'}">
+                        广州酒吧领舞培训班
+                        <label>05-15</label>
                       </router-link>
                   </li>
               </ul>

@@ -143,5 +143,27 @@ export default new Router({
         },
       ]
     },
+    // 问答列表页面
+    {
+      path: '/index/:qid/',
+      name:'queanws/index',
+      component: () => import ('@/news/queanws/index'),
+      redirect: '/queanws/:qid/',
+      children: [
+        // 问答详情页面
+        {
+          path: '/queanws/:qid/',
+          name:'lists',
+          component: () => import ('@/news/queanws/lists'),
+        },
+        // 问答详情页面
+        {
+          path: '/queanws/:qid.html',
+          name:'queanwsinfo',
+          component: () => import ('@/news/queanws/queanwsinfo'),
+        },
+      ]
+    },
+    
   ]
 })
