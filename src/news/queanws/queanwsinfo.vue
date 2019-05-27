@@ -6,19 +6,17 @@
             <router-link :to="{name:'/'}">
                 91求学
             </router-link>&gt;
-            <router-link :to="{name:'/'}">
+            <router-link :to="{path:'/queanws/'+123+'/'}">
                 问答培训
             </router-link>&gt;
             <router-link to="">
                 测试
             </router-link>
         </p>
-
         <div class="content">
             <h2>测试</h2>
             测试
         </div>
-
         <!-- 课程特色 -->
         <div class="tese">
             <ul>
@@ -27,17 +25,28 @@
                 <div class="clear"></div>
             </ul>
         </div>
-
         <div class="clainfo" v-if="activeValue == '1'">
             <ul>
                 <li v-for="ins in 5">
-                    <router-link to="">
+                    <router-link :to="{path: '/news/id-'+12+'-cityid-'+123+'.html'}">
                         <span>呼和浩特职场英语培训学校</span>
                         <label> 05-06</label>
                     </router-link>
+                    <div class="clear"></div>
                 </li>
             </ul>
         </div>  
+        <div class="clainfo" v-else>
+            <ul>
+                <li v-for="ins in 5">
+                    <router-link :to="{path: '/school/'+864+'/document-id-'+46453+'.html'}">
+                        <span>机构文章机构文章</span>
+                        <label> 05-07</label>
+                    </router-link>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div> 
     </div>
 </template>
 
@@ -98,9 +107,17 @@ export default {
                 padding-top: 10px;
                 a{
                     font-size: 14px ;
-                }
-                label {
-                    float: right;
+                    span{
+                        width: 80%;
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        float left;
+                    }
+                    label {
+                        float: right;
+                    }
                 }
             }
        }

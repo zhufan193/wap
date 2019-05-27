@@ -3,7 +3,7 @@
     <div class="news box" v-title v-bind:data-title="title">
         <!-- 当前位置 -->
         <div class="now-where">
-            <p style="overflow: unset;">位置：
+            <p>位置：
                 <router-link to="">91求学教育网</router-link>&gt;
                 <router-link to="">91求学教育网新闻信息</router-link>&gt;
                 <router-link to="">91求学教育网新闻信息</router-link>&gt;
@@ -214,6 +214,9 @@ export default {
             overflow: hidden;
             margin: 0.5rem 0px 0.2rem;
             font-size: 0.3rem;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         h2{
             color: #FF0000;

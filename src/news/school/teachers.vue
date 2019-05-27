@@ -6,7 +6,7 @@
             <h2>深圳美联英语师资介绍</h2>
             <ul>
                 <li v-for="ins in 5">
-                    <router-link to="">
+                    <router-link :to="{path:'/school/'+11+'/document-id-'+32+'.html'}">
                         Rachel/潘琴
                         <label>2019-03-16</label>
                     </router-link>
@@ -94,6 +94,8 @@ export default {
             padding 10px 0;
             li{
                 padding-top: 0.3rem;
+                line-height: 15px;
+                height: 15px;
                 a{
                     color: #434343;
                     font-size: 0.33rem;

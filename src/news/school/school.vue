@@ -245,6 +245,10 @@ export default {
                         font-size: 0.4rem;
                         margin-top: 0.1rem;
                         line-height 20px;
+                        display: block;
+                        overflow hidden;
+                        white-space nowrap;
+                        text-overflow ellipsis;
                         .span-num{
                             color: #e61439;
                             font-weight: 600;

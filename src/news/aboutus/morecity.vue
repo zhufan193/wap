@@ -35,12 +35,12 @@
                 <div class="jyyq-top-div-left left">
                     <div class="jyyq-top-div-top left">
                         <li>
-                            <span class="jyyq-top-div-top-span">1</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span">1</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="jyyq-top-div-top left">
                         <li>
-                            <span class="jyyq-top-div-top-span">2</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span">2</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="clear"></div>
@@ -48,7 +48,7 @@
                 <div class="jyyq-top-div-right right">
                     <div class="jyyq-top-div-top left">
                         <li>
-                            <span class="jyyq-top-div-top-span">3</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span">3</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="jyyq-top-div-top left">
@@ -69,13 +69,13 @@
                     <div class="jyyq-top-div-top left">
                         <li>
                             <i class="fa fa-circle-o" style="font-size: 20px; margin-right: 5px; color: #11a3d3;"></i>
-                        <span class="jyyq-top-div-top-span1">1</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                        <span class="jyyq-top-div-top-span1">1</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="jyyq-top-div-top left">
                         <li>
                             <i class="fa fa-circle-o" style="font-size: 20px; margin-right: 5px; color: #11a3d3;"></i>
-                            <span class="jyyq-top-div-top-span1">2</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span1">2</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="clear"></div>
@@ -84,19 +84,19 @@
                     <div class="jyyq-top-div-top left">
                         <li>
                             <i class="fa fa-circle-o" style="font-size: 20px; margin-right: 5px; color: #11a3d3;"></i>
-                            <span class="jyyq-top-div-top-span1">3</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span1">3</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="jyyq-top-div-top left">
                         <li>
                             <i class="fa fa-circle-o" style="font-size: 20px; margin-right: 5px; color: #11a3d3;"></i>
-                            <span class="jyyq-top-div-top-span1">4</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span1">4</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                     <div class="jyyq-top-div-top left">
                         <li>
                             <i class="fa fa-circle-o" style="font-size: 20px; margin-right: 5px; color: #11a3d3;"></i>
-                            <span class="jyyq-top-div-top-span1">5</span>提供91搜课网深圳站宣传平台，辅助乙方推广运营91搜课网深圳站(http://xx.91soker.com/)
+                            <span class="jyyq-top-div-top-span1">5</span>提供91求学网深圳站宣传平台，辅助乙方推广运营91求学网深圳站(http://xx.91qiux.com/)
                         </li>
                     </div>
                 </div>
@@ -177,6 +177,7 @@ export default {
                     font-size: 0.4rem;
                     line-height: 0.7rem;
                     color: white;
+                    margin-top -105px;
                 }
             }
         }
@@ -198,21 +199,29 @@ export default {
                 color: #fff;
                 border-radius: 5px;
                 background-color: #e61439;
-                .jyyq-top-div-top {
-                    margin-top: 0.3rem;
-                    position: relative;
-                    border-radius: 10px;
-                    border: 1px solid #7f7f7f;
-                    li{
-                        color: #7f7f7f;
-                        padding: 15px 25px;
-                        .jyyq-top-div-top-span {
-                            top: 16px;
-                            left: 30px;
-                            font-size: 12px;
-                            color: #e61439;
-                            position: absolute;
-                        }
+                padding: 10px;
+            }
+            .jyyq-top-div-auto1 {
+                background-color: #11a3d3;
+            }
+            .jyyq-top-div-top{
+                margin-top: 0.3rem;
+                position: relative;
+                border-radius: 10px;
+                border: 1px solid #7f7f7f;
+                li{
+                    color: #7f7f7f;
+                    padding: 15px 25px;
+                    line-height 17px;
+                    .jyyq-top-div-top-span {
+                        font-size: 12px;
+                        color: #e61439;
+                        width 20px;
+                        height 20px;
+                        border-radius 50%;
+                        border: 1px solid #e61439;
+                        padding: 0 3px;
+                        margin-right 5px;
                     }
                 }
             }

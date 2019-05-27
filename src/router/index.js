@@ -150,7 +150,7 @@ export default new Router({
       component: () => import ('@/news/queanws/index'),
       redirect: '/queanws/:qid/',
       children: [
-        // 问答详情页面
+        // 问答列表页面
         {
           path: '/queanws/:qid/',
           name:'lists',

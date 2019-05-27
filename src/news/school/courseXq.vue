@@ -23,7 +23,7 @@
                         <li>课程周期 ：<span>1-3个月</span></li>
                     </ul>
                     <ul class="kcjg-right right">
-                        <li class="yysx"><router-link to="">预约试学</router-link></li>
+                        <li class="yysx"><router-link :to="{path: '/school/'+12+'/demand.html'}">预约试学</router-link></li>
                         <li class="zxls">
                             <router-link to="">咨询老师</router-link></li>
                     </ul>
@@ -292,6 +292,12 @@ export default {
                 .firstli{
                     width: 54%;
                     padding-right: 10px;
+                    h2{
+                        display: block;
+                        overflow hidden;
+                        text-overflow ellipsis;
+                        white-space nowrap;
+                    }
                 }
                 .secondli{
                     width: 43%;

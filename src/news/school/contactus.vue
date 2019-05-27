@@ -110,7 +110,7 @@ export default {
         }
         p{
             color: #454545;
-            font-size: 0.35rem;
+            font-size: 16px; 
             line-height: 0.6rem;
             margin-top: 0.4rem;
             span{

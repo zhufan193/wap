@@ -94,6 +94,8 @@ export default {
             padding 10px 0;
             li{
                 padding-top: 0.3rem;
+                height 15px;
+                line-height 15px;
                 a{
                     color: #434343;
                     font-size: 0.33rem;

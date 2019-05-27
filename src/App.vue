@@ -51,6 +51,7 @@ body {
     margin: 0px auto !important;
     background-color: #fff !important;
 }
+html{background-color: #fff !important;}
 li {
     display: list-item;
     text-align: -webkit-match-parent;
