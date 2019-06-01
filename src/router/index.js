@@ -4,6 +4,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    { path: '*', redirect: '/404', hidden: true },
+    {
+      path: '/404', 
+      name:'404',
+      component: () => import ('@/news/error/404'),
+    },
     {
       path: '/',
       name:'/',
