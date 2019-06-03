@@ -1,10 +1,6 @@
 <template>
     <!-- 联系我们 -->
     <div class="area box" v-title v-bind:data-title="title">
-        <!-- 培训课程 -->
-        <div class="px-course">
-            
-        </div>
         <!-- 培训类型 -->
         <div class="leix">
             <h2>上海致学教育</h2>
@@ -20,7 +16,7 @@
                 <ul v-for="(rem,rind) in recomList" :key="rind">
                     <li>
                         <router-link :to="{path:'/course/id-'+rem.cid+'-cityid-'+rem.cityid+'.html'}">
-                            <img src="http://www.91qiux.com/attachment/information/201902/pre_1550717391u0mqp.jpg" alt="">
+                            <img :src="rem.img" alt="">
                         </router-link>
                     </li>
                     <h2>
@@ -51,16 +47,10 @@
                         <div class="clear"></div>
                     </ul>
                 </router-link>
-
                 <ul class="secondul">
-                    <router-link :to="{name:'photos'}">
+                    <router-link v-for="(photo,pindex) in photoList" :key="pindex" :to="{name:'photos'}">
                         <li class="left">
-                            <img src="http://www.91qiux.com/attachment/album/201810/pre_1539748137wbksc.jpg" title="" alt="">
-                        </li>
-                    </router-link>
-                    <router-link :to="{name:'photos'}">
-                        <li class="left">
-                            <img src="http://www.91qiux.com/attachment/album/201810/pre_1539748127uzta6.png" title="" alt="">
+                            <img :src="photo.img" :title="photo.name" :alt="photo.name">
                         </li>
                     </router-link>
                     <div class="clear"></div>
@@ -80,17 +70,16 @@ export default {
                 {name:'中学',catid:'123',cid:'234'},
                 {name:'大学',catid:'123',cid:'235'},
             ],
-            // 培训课程
-            courseList:[
-                {name:'上海致学初二全科辅导班',cityid:'23',cid:'123'},
-                {name:'上海致学初一全科辅导班',cityid:'123',cid:'234'},
-                {name:'上海致学初三全科辅导班',cityid:'123',cid:'235'},
-            ],
             // 推荐课程
             recomList:[
-                {name:'上海致学教育小学全科1',cityid:'23',cid:'123'},
-                {name:'上海致学教育小学全科2',cityid:'123',cid:'234'},
-                {name:'上海致学教育小学全科3',cityid:'123',cid:'235'},
+                {name:'上海致学教育小学全科1',cityid:'23',cid:'123',img: 'http://www.91qiux.com/attachment/information/201902/pre_1550717391u0mqp.jpg'},
+                {name:'上海致学教育小学全科2',cityid:'123',cid:'234',img: 'http://www.91qiux.com/attachment/information/201902/pre_1550717391u0mqp.jpg'},
+                {name:'上海致学教育小学全科3',cityid:'123',cid:'235',img: 'http://www.91qiux.com/attachment/information/201902/pre_1550717391u0mqp.jpg'},
+            ],
+            // 环境图
+            photoList: [
+                {id: '1',img: 'http://www.91qiux.com/attachment/album/201810/pre_1539748137wbksc.jpg',name: '上海程童美环境图'},
+                {id: '2',img: 'http://www.91qiux.com/attachment/album/201810/pre_1539748137wbksc.jpg',name: '上海程童美环境图'},
             ],
         }
     }

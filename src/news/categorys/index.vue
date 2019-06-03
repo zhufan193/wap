@@ -43,7 +43,9 @@
                 </div>
                 <div class="c-third-div left">
                     <li>
-                        <a href="mqqwpa://im/chat?chat_type=wpa&amp;uin=1372575379&amp;version=1&amp;src_type=web&amp;web_src=http://www.91qiux.com"><span></span>请咨询</a>
+                        <a href="mqqwpa://im/chat?chat_type=wpa&amp;uin=1372575379&amp;version=1&amp;src_type=web&amp;web_src=http://www.91qiux.com">
+                            <span></span>请咨询
+                        </a>
                     </li>
                 </div>
                 <div class="clear"></div>
@@ -63,7 +65,6 @@
                 页
             </span>
         </div>
-
         <!-- 其他城市 -->
         <div class="city-tab">
             <mt-navbar v-model="selected">
@@ -74,9 +75,9 @@
             <mt-tab-container-item id="1">
                 <mt-cell>
                 <ul>
-                    <li v-for="a in 5">
-                        <router-link :to="{path:'/course/id-'+181+'-cityid-'+20+'.html'}">
-                            广州外语培训
+                    <li v-for="(other,index) in others" :key="index">
+                        <router-link :to="{path:'/course/id-'+other.id+'-cityid-'+other.cid+'.html'}">
+                            {{other.name}}
                         </router-link>
                     </li>
                 </ul>
@@ -85,9 +86,9 @@
             <mt-tab-container-item id="2">
                 <mt-cell>
                 <ul>
-                    <li v-for="a in 5">
-                        <router-link :to="{path:'/cityid/'+2+'.html'}">
-                            广州培训网
+                    <li v-for="(city,index) in citys" :key="index">
+                        <router-link :to="{path:'/cityid/'+city.id+'.html'}">
+                            {{city.name}}
                         </router-link>
                     </li>
                 </ul>
@@ -119,9 +120,9 @@
             <mt-tab-container-item id="2">
                 <mt-cell>
                 <ul>
-                    <li class="news-li" v-for="a in 5">
+                    <li class="news-li" v-for="(news,index) in newsList" :key="index">
                         <router-link to="">
-                            广州培训网
+                            广州培训网{{news.name}}
                         </router-link>
                     </li>
                 </ul>
@@ -161,6 +162,26 @@ export default {
                 {name:'广州外语培训',sid:'132'},
                 {name:'广州外语培训',sid:'142'},
                 {name:'广州外语培训',sid:'162'},
+            ],
+            // 相关新闻
+            newsList:[
+                {name:'广州外语培训',sid:'12'},
+                {name:'广州外语培训',sid:'132'},
+                {name:'广州外语培训',sid:'142'},
+                {name:'广州外语培训',sid:'162'},
+            ],
+
+            // 其他城市
+            others: [
+                {id: '1',cid: '12',name: '广州外语培训'},
+                {id: '2',cid: '12',name: '广州外语培训'},
+                {id: '3',cid: '12',name: '广州外语培训'},
+            ],
+            // 城市分站
+            citys: [
+                {id: '1',name: '广州外语培训'},
+                {id: '2',name: '广州外语培训'},
+                {id: '3',name: '广州外语培训'},
             ],
         }
     },

@@ -94,7 +94,6 @@
                     </span><br>            
             </div>
         </div>
-
         <div class="class-box">
             <router-link to="">
                 <div class="kec">
@@ -125,7 +124,6 @@
                 </div>
             </router-link>
         </div>
-
         <!-- 相关新闻 -->
         <div class="city-tab">
             <mt-navbar v-model="newsSelected">
@@ -363,5 +361,3 @@ export default {
     }
 }
 </style>
-
-

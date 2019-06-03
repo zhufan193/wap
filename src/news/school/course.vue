@@ -4,14 +4,14 @@
         <div class="courselist">
             <h2>课程列表</h2>
             <div class="school-content">
-                <ul class="left" v-for="ins in 4" :key="ins">
+                <ul class="left" v-for="(course,cindex) in courseList" :key="cindex">
                     <li>
-                        <router-link :to="{path:'/course/id-'+14101+'-cityid-'+3+'.html'}">
-                            <img src="http://www.91qiux.com/attachment/information/201902/pre_15509146777ceio.jpg" title="" alt=""/>
+                        <router-link :to="{path:'/course/id-'+course.id+'-cityid-'+course.cityid+'.html'}">
+                            <img :src="course.img" :title="course.name" :alt="course.name"/>
                         </router-link>
                     </li>
                     <p>
-                        <router-link to="">深圳雅思培训班</router-link>
+                        <router-link :to="{path:'/course/id-'+course.id+'-cityid-'+course.cityid+'.html'}">{{course.name}}</router-link>
                     </p>
                 </ul>
                 <div class="clear"></div> 
@@ -43,6 +43,10 @@ export default {
             page: 0, // 总共多少页
             flage: 1, //当前页
             topage: null,
+            // 课程列表
+            courseList: [
+                {id: '1',cityid: '123',name: '深圳雅思培训班',img: 'http://www.91qiux.com/attachment/information/201902/pre_15509146777ceio.jpg'},
+            ],
         }
     },
     created() {

@@ -4,15 +4,15 @@
         <div class="arealist">
             <h2>校区列表</h2>
             <div>
-                <ul v-for="ins in 5">
+                <ul v-for="(area,aindex) in areaList" :key="aindex">
                     <li>
-                        <h2>静安共康校区</h2>
+                        <h2>{{area.name}}</h2>
                         <p>
                             <span>校区地址：</span>
-                            共和新路46
+                            {{area.adder}}
                         </p>
                         <span class="yuanwen">
-                            <router-link :to="{path:'/school/'+12+'/schoolinfo-id-'+123+'.html'}">
+                            <router-link :to="{path:'/school/'+area.id+'/schoolinfo-id-'+area.infoid+'.html'}">
                                 阅读原文
                             </router-link>
                         </span>
@@ -47,7 +47,10 @@ export default {
             page: 0, // 总共多少页
             flage: 1, //当前页
             topage: null,
-
+            // 校区列表
+            areaList: [
+                {id: '12',infoid: '123',name: '静安共康校区',adder: '共和新路46'}
+            ],
         }
     },
     created() {

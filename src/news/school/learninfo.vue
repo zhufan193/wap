@@ -5,10 +5,10 @@
         <div class="learninfo">
             <h2>深圳美联英语学习资讯</h2>
             <ul>
-                <li v-for="ins in 5">
+                <li v-for="(stu,sindex) in learnList" :key="sindex">
                     <router-link to="">
-                        深圳哪个少儿英语培训学校
-                        <label>2019-03-16</label>
+                        {{stu.name}}
+                        <label>{{stu.time}}</label>
                     </router-link>
                 </li>
                 <div class="clear"></div>
@@ -40,6 +40,12 @@ export default {
             page: 0, // 总共多少页
             flage: 1, //当前页
             topage: null,
+            // 资讯列表
+            learnList: [
+                {id: '1',name: '深圳哪个少儿英语培训学校',time: '2019-03-16'},
+                {id: '2',name: '深圳哪个少儿英语培训学校',time: '2019-03-16'},
+                {id: '3',name: '深圳哪个少儿英语培训学校',time: '2019-03-16'},
+            ],
         }
     },
     created() {

@@ -13,11 +13,9 @@
     <!-- 培训机构 -->
     <div class="shcoolList">
         <ul>
-            <li v-for="(ptem,pindex) in pxList" :key="pindex">
-                <router-link :to="{path:'/category/catid-'+ptem.catid+'-cityid-'+ptem.cityid+'.html'}" title="语言培训" alt="语言培训">
-                  {{ptem.name}}
-                </router-link>
-            </li>
+            <router-link v-for="(ptem,pindex) in pxList" :key="pindex" :to="{path:'/category/catid-'+ptem.catid+'-cityid-'+ptem.cityid+'.html'}" :title="ptem.name" :alt="ptem.name">
+              {{ptem.name}}
+            </router-link>
             <div class="clear"></div>
         </ul>
     </div>
@@ -381,10 +379,10 @@
           <mt-tab-container-item id="1">
             <mt-cell>
               <ul>
-                  <li v-for="a in 5">
+                  <li v-for="(course,cindex) in courseList" :key="cindex">
                       <router-link to="">
-                        广州酒吧领舞培训班
-                        <label>05-19</label>
+                        {{course.name}}
+                        <label>{{course.time}}</label>
                       </router-link>
                   </li>
               </ul>
@@ -393,10 +391,10 @@
           <mt-tab-container-item id="2">
             <mt-cell>
               <ul>
-                  <li v-for="a in 5">
-                      <router-link :to="{path:'school/'+1107+'/document-id-'+46995+'.html'}">
-                        广州酒吧领舞培训班
-                        <label>05-15</label>
+                  <li v-for="(trends,tindex) in trendList" :key="tindex">
+                      <router-link :to="{path:'school/'+trends.sid+'/document-id-'+trends.id+'.html'}">
+                        {{trends.name}}
+                        <label>{{trends.time}}</label>
                       </router-link>
                   </li>
               </ul>
@@ -405,10 +403,10 @@
           <mt-tab-container-item id="3">
             <mt-cell>
               <ul>
-                  <li v-for="a in 5">
-                      <router-link :to="{path:'school/'+1107+'/document-id-'+465+'.html'}">
-                        广州酒吧领舞培训班
-                        <label>05-11</label>
+                  <li v-for="(info,index) in information" :key="index">
+                      <router-link :to="{path:'school/'+info.sid+'/document-id-'+info.id+'.html'}">
+                        {{info.name}}
+                        <label>{{info.time}}</label>
                       </router-link>
                   </li>
               </ul>
@@ -417,10 +415,10 @@
           <mt-tab-container-item id="4">
             <mt-cell>
               <ul>
-                  <li v-for="a in 5">
-                      <router-link :to="{path:'/news/id-'+12886+'-cityid-'+0+'.html'}">
-                        广州酒吧领舞培训班
-                        <label>05-10</label>
+                  <li v-for="(news,nindex) in newsList" :key="nindex">
+                      <router-link :to="{path:'/news/id-'+news.id+'-cityid-'+news.cityid+'.html'}">
+                        {{news.name}}
+                        <label>{{news.time}}</label>
                       </router-link>
                   </li>
               </ul>
@@ -429,10 +427,10 @@
           <mt-tab-container-item id="5">
             <mt-cell>
               <ul>
-                  <li v-for="a in 5">
-                      <router-link :to="{path:'/queanws/'+12+'.html'}">
-                        广州酒吧领舞培训班
-                        <label>05-15</label>
+                  <li v-for="(ans,aindex) in quanList" :key="aindex">
+                      <router-link :to="{path:'/queanws/'+ans.id+'.html'}">
+                        {{ans.name}}
+                        <label>{{ans.time}}</label>
                       </router-link>
                   </li>
               </ul>
@@ -530,7 +528,36 @@
                 },
               ]},
         ],
-        
+        // 新闻列表
+        courseList: [
+          {id: '1',name: '广州酒吧领舞培训班',time: '05-19'},
+          {id: '2',name: '广州酒吧领舞培训班',time: '05-20'},
+          {id: '3',name: '广州酒吧领舞培训班',time: '05-21'},
+        ],
+        // 动态
+        trendList: [
+          {id: '1',sid: '2',name: '广州酒吧领舞培训班',time: '04-22'},
+          {id: '2',sid: '2',name: '广州酒吧领舞培训班',time: '04-23'},
+          {id: '3',sid: '2',name: '广州酒吧领舞培训班',time: '04-24'},
+        ],
+        // 资讯
+        information: [
+          {id: '1',sid: '2',name: '广州酒吧领舞培训班',time: '04-22'},
+          {id: '2',sid: '2',name: '广州酒吧领舞培训班',time: '04-23'},
+          {id: '3',sid: '2',name: '广州酒吧领舞培训班',time: '04-24'},
+        ],
+        // 新闻
+        newsList: [
+          {id: '1',cityid: '2',name: '广州酒吧领舞培训班',time: '04-22'},
+          {id: '2',cityid: '2',name: '广州酒吧领舞培训班',time: '04-23'},
+          {id: '3',cityid: '2',name: '广州酒吧领舞培训班',time: '04-24'},
+        ],
+        // 问答
+        quanList: [
+          {id: '1',name: '广州酒吧领舞培训班',time: '04-22'},
+          {id: '2',name: '广州酒吧领舞培训班',time: '04-23'},
+          {id: '3',name: '广州酒吧领舞培训班',time: '04-24'},
+        ],
       }
     },
     watch: {
@@ -541,7 +568,6 @@
       getDate(){
         this.$router.go(0)
       },
-
     },
     components:{
       HeaderTop,
@@ -558,7 +584,6 @@
     .banner{
       width 100%
       height 100px
-      
       a img{
         width 100%
         height 100%
@@ -569,24 +594,24 @@
       padding-top: 5px;
       padding-bottom: 0px;
       ul{
-        li{
+        a{
             float: left;
             width: 25%;
             line-height: 1rem;
             text-align: center;
             line-height: 0.9rem;
-            a:before{
-              content: "";
-              color: #fff;
-              width: 1rem;
-              height: 1rem;
-              padding: 10px;
-              display: block;
-              margin: 0px auto;
-              text-align: center;
-              background-size: 100% 100%;
-              background: url(../../assets/bg/wypx.jpg) center/100%;
-            }
+        }
+        a:before{
+          content: "";
+          color: #fff;
+          width: 1rem; 
+          height: 1rem;
+          padding: 10px;
+          display: block;
+          margin: 0px auto;
+          text-align: center;
+          background-size: 100% 100%;
+          background: url(../../assets/bg/wypx.jpg) center/100%;
         }
       }
     }
