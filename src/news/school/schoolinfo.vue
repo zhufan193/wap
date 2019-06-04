@@ -16,7 +16,7 @@
             </div>
             <ul>
                 <li v-for="(sch,sind) in otherList" :key="sind">
-                    <router-link :to="{path:'/school/'+sch.sid+'/schoolinfo-id-'+sch.infoid+'.html'}" title="" alt="">{{sch.name}}</router-link>
+                    <router-link :to="{path:'/school/'+sch.sid+'/schoolinfo-id-'+sch.infoid+'.html'}" :title="sch.name" :alt="sch.name">{{sch.name}}</router-link>
                 </li>
                 <div class="clear"></div>
             </ul>

@@ -5,10 +5,10 @@
         <div class="learninfo">
             <h2>深圳美联英语师资介绍</h2>
             <ul>
-                <li v-for="ins in 5">
-                    <router-link :to="{path:'/school/'+11+'/document-id-'+32+'.html'}">
-                        Rachel/潘琴
-                        <label>2019-03-16</label>
+                <li v-for="(tea,tindex) in teacherList" :key="tindex">
+                    <router-link :to="{path:'/school/'+tea.sid+'/document-id-'+tea.id+'.html'}">
+                        {{tea.name}}
+                        <label>{{tea.time}}</label>
                     </router-link>
                 </li>
                 <div class="clear"></div>
@@ -40,6 +40,11 @@ export default {
             page: 0, // 总共多少页
             flage: 1, //当前页
             topage: null,
+            teacherList: [
+                {id: '1',sid: '12', name: 'Rachel/潘琴',time: '2019-03-16'},
+                {id: '2',sid: '12', name: 'Rachel/潘琴',time: '2019-03-16'},
+                {id: '3',sid: '12', name: 'Rachel/潘琴',time: '2019-03-16'},
+            ],
         }
     },
     created() {

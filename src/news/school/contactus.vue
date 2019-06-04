@@ -26,12 +26,11 @@
                 <div class="clear"></div>
             </div>
         </div>
-        
         <!-- 师资介绍 -->
         <div class="teachers">
             <h2>师资介绍</h2>
             <h2>教学环境</h2>
-            <div class="teacher-photos">
+            <div class="teacher-photos">`
                 <router-link :to="{name:'teachers'}" title="杨院长" alt="">
                     <ul class="firstul">
                         <li class="firstli left">

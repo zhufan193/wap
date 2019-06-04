@@ -10,21 +10,21 @@
                     <router-link to="">搜索</router-link>
                 </span>
             </div>
-            <div class="div-nav">找到 课程 相关信息 10511 条</div>
+            <div class="div-nav">找到 课程 相关信息 {{all}} 条</div>
             <div class="div-result">
                 <ul>
-                    <li v-for="ins in 5">
+                    <li v-for="(course,cindex) in courseList" :key="cindex">
                         <router-link :to="{path:'/course/id-'+18468+'-cityid-'+32+'.html'}">
                             <dl>
                                 <dt class="dt-cla">
-                                    <span class="first-span">苏州智慧父母培训</span>&nbsp;
+                                    <span class="first-span">{{course.title}}</span>&nbsp;
                                     <span class="second-span">1图</span>
                                 </dt>
                                 <dd class="attr">
-                                    <span>用爱的连接，在亲子关系中传承生命的力量！用身心一致的支</span>
+                                    <span>{{course.content}}</span>
                                 </dd>
                                 <dd class="attr">
-                                    suzhouxlc&nbsp;&nbsp;19-05-12 &nbsp;阅5
+                                    suzhouxlc&nbsp;&nbsp;{{course.time}} &nbsp;阅5
                                 </dd>
                             </dl>
                         </router-link>
@@ -56,12 +56,17 @@ export default {
     data() {
         return{
             title: '搜索结果',
-            all: 100000, //数据总条数
+            all: 1000, //数据总条数
             pagesize: 15,  //每页多少条
             page: 0, // 总共多少页
             flage: 1, //当前页
             topage: null,
-
+            // 课程内容
+            courseList: [
+                {id: '1',title: '苏州智慧父母培训',content: '用爱的连接，在亲子关系中传承生命的力量！用身心一致的支',time: '19-05-12'},
+                {id: '2',title: '苏州智慧父母培训',content: '用爱的连接，在亲子关系中传承生命的力量！用身心一致的支',time: '19-05-13'},
+                {id: '3',title: '苏州智慧父母培训',content: '用爱的连接，在亲子关系中传承生命的力量！用身心一致的支',time: '19-05-14'},
+            ],
         }
     },
     created() {

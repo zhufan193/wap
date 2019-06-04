@@ -5,10 +5,10 @@
         <div class="learninfo">
             <h2>深圳美联英语班级信息</h2>
             <ul>
-                <li v-for="ins in 5">
+                <li v-for="(info,index) in classInfo" :key="index">
                     <router-link to="">
-                        深圳哪个少儿英语培训机构排名
-                        <label>2019-03-16</label>
+                        {{info.name}}
+                        <label>{{info.time}}</label>
                     </router-link>
                 </li>
                 <div class="clear"></div>
@@ -40,6 +40,10 @@ export default {
             page: 0, // 总共多少页
             flage: 1, //当前页
             topage: null,
+            // 班级信息
+            classInfo: [
+                {id: '1',name: '深圳哪个少儿英语培训机构排名',time: '2019-03-16'}
+            ],
         }
     },
     created() {

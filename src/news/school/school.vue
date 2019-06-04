@@ -69,11 +69,11 @@
             </div>
             <div class="xiaoqu-seconddiv" :class="{'isshow':isshow}">
                 <ul>
-                    <li v-for="ins in 5">
-                        <h2>深圳美联英语宏发中心</h2>
-                        <p>深圳市宝安区宏发中心大厦东面1-2楼</p>
+                    <li v-for="(area,aindex) in areaList" :key="aindex">
+                        <h2>{{area.title}}</h2>
+                        <p>{{area.adder}}</p>
                         <span>
-                            <router-link :to="{path:'/school/'+'12'+'/schoolinfo-id-'+'1234'+'.html'}">乘车路线</router-link>
+                            <router-link :to="{path:'/school/'+area.sid+'/schoolinfo-id-'+area.id+'.html'}">乘车路线</router-link>
                         </span>
                     </li>
                 </ul>
@@ -118,6 +118,10 @@ export default {
                         {img:'http://www.91qiux.com/attachment/information/201902/pre_1550979796zebsa.jpg', course:'上海青少年英语培训班',school:'上海美联英语'},
                     ]
                 },
+            ],
+            //  校区分布
+            areaList: [
+                {id: '1',sid: '12',title: '深圳美联英语宏发中心',adder: '深圳市宝安区宏发中心大厦东面1-2楼'}
             ],
             mainValue:'0',  //选择哪个关键词
             selectEnglish:'1',

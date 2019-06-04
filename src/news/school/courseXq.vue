@@ -134,9 +134,9 @@
             <mt-tab-container-item id="1">
                 <mt-cell>
                 <ul>
-                    <li v-for="a in 5">
+                    <li v-for="(news,nindex) in newsList" :key="nindex">
                         <router-link to="">
-                            深圳雅思培训哪个好
+                            {{news.name}}
                         </router-link>
                     </li>
                     <div class="clear"></div>
@@ -146,9 +146,9 @@
             <mt-tab-container-item id="2">
                 <mt-cell>
                 <ul>
-                    <li class="news-li" v-for="a in 5">
+                    <li class="news-li" v-for="(learn,lindex) in learnList" :key="lindex">
                         <router-link to="">
-                            深圳雅思培训哪个好
+                        {{learn.name}}
                         </router-link>
                     </li>
                 </ul>
@@ -166,6 +166,18 @@ export default {
             title:'课程详情',
             activeValue: '1', // 课程特色
             newsSelected: '1',
+            // 相关新闻
+            newsList: [
+                {id: '1',name: '深圳雅思培训哪个好'},
+                {id: '2',name: '深圳雅思培训哪个好'},
+                {id: '3',name: '深圳雅思培训哪个好'},
+            ],
+            // 学习资讯
+            learnList: [
+                {id: '1',name: '深圳雅思培训哪个好'},
+                {id: '2',name: '深圳雅思培训哪个好'},
+                {id: '3',name: '深圳雅思培训哪个好'},
+            ],
         }
     }
 }
