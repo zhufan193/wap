@@ -290,12 +290,6 @@ export default {
                 .firstli{
                     width: 54%;
                     padding-right: 10px;
-                    h2{
-                        display: block;
-                        overflow hidden;
-                        text-overflow ellipsis;
-                        white-space nowrap;
-                    }
                 }
                 .secondli{
                     width: 43%;
@@ -306,6 +300,10 @@ export default {
                     color: #484848;
                     letter-spacing: 0.03rem;
                     font-weight: bold;
+                    display: block;
+                    overflow hidden;
+                    text-overflow ellipsis;
+                    white-space nowrap;
                 }
                 p{
                     color: #6e6e6e;
